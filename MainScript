@@ -1,0 +1,247 @@
+local button = script.Parent
+local player =game.Players.LocalPlayer
+local ScoreLabel = button.Parent.ScoreLabel
+local ShopFrame = button.Parent.ShopFrame
+local ShopButton = button.Parent.ShopButton
+local X2ClicksButton = ShopFrame.X2ClicksButton
+
+local ScoreValue = Instance.new("IntValue", ScoreLabel)
+ScoreValue.Value = 0
+
+local ClicksValue = Instance.new("IntValue", button)
+ClicksValue.Value = 1
+
+local X2ClicksPrice = Instance.new("IntValue", X2ClicksButton)
+X2ClicksPrice.Value = 25
+
+X2ClicksButton.Text = "X2 Clicks     "..X2ClicksPrice.Value
+
+local TweenService = game:GetService("TweenService")
+local ogsize = button.Size
+
+local tweenInfo = TweenInfo.new(
+	0.2,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.Out,
+	0,
+	false,
+	0
+)
+local tweenInfo2 = TweenInfo.new(
+	0.2,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.In,
+	0,
+	false,
+	0
+)
+local tweenInfo3 = TweenInfo.new(
+	0.1,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.In,
+	0,
+	false,
+	0
+)
+
+local goal = {
+	Size = UDim2.fromScale(ogsize.X.Scale * 1.1, ogsize.Y.Scale * 1.1)
+}
+local goal2 = {
+	Size = UDim2.fromScale(ogsize.X.Scale, ogsize.Y.Scale)
+}
+local goal3 = {
+	Size = UDim2.fromScale(ogsize.X.Scale * 0.9, ogsize.Y.Scale * 0.9)
+}
+
+local tweenService = TweenService:Create(button, tweenInfo, goal)
+local tweenService2 = TweenService:Create(button, tweenInfo2, goal2)
+local tweenService3 = TweenService:Create(button, tweenInfo3, goal3)
+
+
+button.MouseEnter:Connect(function()
+	tweenService:Play()
+end)
+button.MouseLeave:Connect(function()
+	tweenService2:Play()
+end)
+button.MouseButton1Down:Connect(function()
+	tweenService3:Play()
+end)
+button.MouseButton1Up:Connect(function()
+	tweenService:Play()
+end)
+
+local ogsize2 = ShopButton.Size
+
+local tweenInfo4 = TweenInfo.new(
+	0.2,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.Out,
+	0,
+	false,
+	0
+)
+local tweenInfo5 = TweenInfo.new(
+	0.2,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.In,
+	0,
+	false,
+	0
+)
+local tweenInfo6 = TweenInfo.new(
+	0.1,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.In,
+	0,
+	false,
+	0
+)
+
+local goal4 = {
+	Size = UDim2.fromScale(ogsize2.X.Scale * 1.1, ogsize2.Y.Scale * 1.1)
+}
+local goal5 = {
+	Size = UDim2.fromScale(ogsize2.X.Scale, ogsize2.Y.Scale)
+}
+local goal6 = {
+	Size = UDim2.fromScale(ogsize2.X.Scale * 0.9, ogsize2.Y.Scale * 0.9)
+}
+
+local tweenService4 = TweenService:Create(ShopButton, tweenInfo4, goal4)
+local tweenService5 = TweenService:Create(ShopButton, tweenInfo5, goal5)
+local tweenService6 = TweenService:Create(ShopButton, tweenInfo6, goal6)
+
+
+ShopButton.MouseEnter:Connect(function()
+	tweenService4:Play()
+end)
+ShopButton.MouseLeave:Connect(function()
+	tweenService5:Play()
+end)
+ShopButton.MouseButton1Down:Connect(function()
+	tweenService6:Play()
+end)
+ShopButton.MouseButton1Up:Connect(function()
+	tweenService4:Play()
+end)
+
+
+local Value = 0
+
+local tweenInfo7 = TweenInfo.new(
+	0.2,
+	Enum.EasingStyle.Back,
+	Enum.EasingDirection.Out,
+	0,
+	false,
+	0
+)
+local tweenInfo8 = TweenInfo.new(
+	0.2,
+	Enum.EasingStyle.Back,
+	Enum.EasingDirection.In,
+	0,
+	false,
+	0
+)
+local goal7 = {
+	Size = UDim2.fromScale(0.466, 0.387)
+}
+local goal8 = {
+	Size = UDim2.fromScale(0, 0)
+}
+
+local tweenService7 = TweenService:Create(ShopFrame, tweenInfo7, goal7)
+local tweenService8 = TweenService:Create(ShopFrame, tweenInfo8, goal8)
+
+
+
+
+ShopButton.MouseButton1Click:Connect(function()
+	if Value == 0 then
+		tweenService7:Play()
+		ShopFrame.Visible = true
+		Value = 1
+	elseif Value == 1 then
+		tweenService8:Play()
+		wait(0.2)
+		ShopFrame.Visible = false
+		Value = 0
+	end
+end)
+
+
+local ogsize3 = X2ClicksButton.Size
+
+local tweenInfo9 = TweenInfo.new(
+	0.2,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.Out,
+	0,
+	false,
+	0
+)
+local tweenInfo10 = TweenInfo.new(
+	0.2,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.In,
+	0,
+	false,
+	0
+)
+local tweenInfo11 = TweenInfo.new(
+	0.1,
+	Enum.EasingStyle.Sine,
+	Enum.EasingDirection.In,
+	0,
+	false,
+	0
+)
+
+local goal9 = {
+	Size = UDim2.fromScale(ogsize3.X.Scale * 1.1, ogsize3.Y.Scale * 1.1)
+}
+local goal10 = {
+	Size = UDim2.fromScale(ogsize3.X.Scale, ogsize3.Y.Scale)
+}
+local goal11 = {
+	Size = UDim2.fromScale(ogsize3.X.Scale * 0.9, ogsize3.Y.Scale * 0.9)
+}
+
+local tweenService9 = TweenService:Create(X2ClicksButton, tweenInfo9, goal9)
+local tweenService10 = TweenService:Create(X2ClicksButton, tweenInfo10, goal10)
+local tweenService11 = TweenService:Create(X2ClicksButton, tweenInfo11, goal11)
+
+
+X2ClicksButton.MouseEnter:Connect(function()
+	tweenService9:Play()
+end)
+X2ClicksButton.MouseLeave:Connect(function()
+	tweenService10:Play()
+end)
+X2ClicksButton.MouseButton1Down:Connect(function()
+	tweenService11:Play()
+end)
+X2ClicksButton.MouseButton1Up:Connect(function()
+	tweenService9:Play()
+end)
+
+
+button.MouseButton1Click:Connect(function()
+	ScoreValue.Value += ClicksValue.Value
+end)
+
+X2ClicksButton.MouseButton1Click:Connect(function()
+	if ScoreValue.Value >= X2ClicksPrice.Value then
+		ScoreValue.Value -= X2ClicksPrice.Value
+		ClicksValue.Value *= 2
+		X2ClicksPrice.Value *= 2
+		X2ClicksButton.Text = "X2 Clicks     "..X2ClicksPrice.Value
+	end
+end)
+
+while wait() do
+	ScoreLabel.Text = "Score: "..ScoreValue.Value
+end
